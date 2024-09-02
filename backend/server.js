@@ -11,7 +11,7 @@ const app = express()
 const httpServer = http.createServer(app)
 
 app.use(express.json())
-app.use(cors)
+app.use(cors())
 mongooseConnection()
 app.use(studentRouter)
 const port = 4000
