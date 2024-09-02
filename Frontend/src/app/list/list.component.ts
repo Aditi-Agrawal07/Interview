@@ -167,10 +167,10 @@ console.log(response);
   onSearch() {
     const searchText = this.searchForm.get('searchText')?.value;
     console.log('Search text:', searchText);
-const data= this.apiCall.filterStudent(searchText).subscribe((response)=>{
-  this.students = response
-})
-console.log(data);
+// const data= this.apiCall.filterStudent(searchText).subscribe((response)=>{
+//   this.students = response
+// })
+// console.log(data);
 
     // Handle search logic here
   }
