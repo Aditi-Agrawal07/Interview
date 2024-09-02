@@ -1,0 +1,41 @@
+
+
+<div class="container p-3">
+    <h2 class="mb-3 d-flex justify-content-center">Student list</h2>
+    <form [formGroup]="searchForm" (ngSubmit)="onSearch()">
+        <input formControlName="searchText" type="text" placeholder="Search..." class="search-input">
+        <button type="submit" class="ms-3">Search</button>
+      </form>
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th></th>
+                <th scope="col">Student Name</th>
+                <th scope="col">Email</th>
+                <th scope="col">Course</th>
+            </tr>
+        </thead>
+        <tbody>
+            @for (student of students; track student.name; let i = $index) {
+                <tr>
+                    <td class="d-flex justify-content-center align-items-center">
+                        <img
+                            src="../../assets/profile_image.jpg"
+                            [alt]="'The flag of ' + student.name"
+                            class="me-2"
+                            style="width: 27px"
+                        />
+                    </td>
+                    <td>
+                        
+                        {{ student.name }}
+                    </td>
+                    <td>{{ student.email }}</td>
+                    <td>{{student.course}}</td>
+        
+                </tr>
+        
+            }
+        </tbody>
+    </table>
+</div>
